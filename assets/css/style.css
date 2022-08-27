@@ -1,0 +1,339 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+html::-webkit-scrollbar {
+  display: none;
+}
+body {
+  font-family: "Montserrat", sans-serif;
+}
+button {
+  cursor: pointer;
+}
+/* Jumbtron */
+.jumbotron {
+  min-height: 20vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.jumbotron #particles-js {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+}
+.jumbotron div.jumbotron-content {
+  display: flex;
+  flex-wrap: wrap;
+  position: absolute;
+  left: 45%;
+  top: 50%;
+}
+.jumbotron div.head-content {
+  width: 100%;
+  z-index: 2;
+}
+.jumbotron div.head-content h2 {
+  font-weight: bolder;
+  font-size: 2em;
+}
+.jumbotron div.head-content h2 span {
+  color: #00fd83;
+}
+
+/* Jumbotron End */
+/* Main Content */
+main {
+  margin-top: 20px;
+}
+main article.add-book {
+  width: 70%;
+  box-sizing: border-box;
+  float: left;
+  margin-bottom: 8px;
+}
+article.add-book {
+  min-height: auto;
+  background-color: transparent;
+  transition: 0.3s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
+  margin-left: 20px;
+}
+
+article.add-book h2.heading {
+  font-weight: bolder;
+  margin-top: 20px;
+  text-align: center;
+  flex-wrap: wrap;
+}
+article.add-book div.main-content {
+  width: 100%;
+  margin: 20px 50px;
+}
+article.add-book div.main-content button {
+  height: 2em;
+  font-size: 1.1em;
+  border-radius: 15px;
+  background-color: #ffffff;
+  border-style: unset;
+}
+
+article.add-book div.main-content button:hover {
+  background-color: #93ffcb;
+}
+article.add-book div.main-content button:active {
+  background-color: #93ffcb;
+}
+article.add-book div.main-content .active {
+  background-color: #93ffcb;
+}
+article.add-book div.main-content .reading-button {
+  width: 45%;
+  align-items: center;
+}
+article.add-book div.main-content .complete-button {
+  width: 45%;
+  align-items: center;
+}
+
+/* Search bar */
+div.search-bar {
+  width: 100%;
+  padding: 0 50px 0 50px;
+  margin-bottom: 10px;
+  display: flex;
+}
+.search-input-container {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #93ffcb;
+  border-radius: 10px;
+}
+.search-input-container input {
+  width: 85%;
+  margin-left: 20px;
+}
+.search-input-container input::-webkit-search-cancel-button {
+  visibility: hidden;
+}
+.search-input-container input,
+.search-input-container input:focus {
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+/* Search bar end */
+
+/* Container Book */
+div.container {
+  height: 53vh;
+  overflow: scroll;
+}
+div.container::-webkit-scrollbar {
+  width: 0.6rem;
+}
+div.container::-webkit-scrollbar-track {
+  background: transparent;
+}
+div.container::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background: #93ffcb;
+}
+div.container div.container-reading,
+div.container div.container-complete {
+  margin: 20px 20px 20px 100px;
+}
+
+div.container ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+div.container ul li {
+  margin: 20px;
+  list-style-type: none;
+}
+div.container .info {
+  margin-top: 20px;
+  width: 70%;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+div.container .info h4 {
+  font-size: 22px;
+}
+div.container .info p {
+  margin-top: 8px;
+  font-size: 16px;
+}
+
+main .info button {
+  min-width: 33px;
+  height: 33px;
+  padding: 5px;
+  margin-top: 5px;
+  margin-right: 5px;
+  font-size: 1.1rem;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+  color: black;
+  border: none;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+main .info button:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transform: translateY(-3px);
+}
+main button.delete {
+  background-color: #d0c9c0;
+}
+main button.complete,
+main button.reading {
+  background-color: #5f7161;
+  color: #fff;
+}
+
+main div.book-image-reading,
+main div.book-image-complete {
+  margin-left: 30%;
+}
+
+/* End Container */
+/* Main Content End */
+
+/* Aside */
+main aside {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  margin-right: 30px;
+  border-radius: 20px;
+  float: right;
+  width: 25%;
+  padding: 20px;
+}
+
+main aside h2 {
+  width: 100%;
+  margin-bottom: 20px;
+  text-align: center;
+}
+form label {
+  font-size: 18px;
+}
+form input[type="number"],
+form input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-right: 50px;
+  margin-bottom: 5px;
+  border: 1px solid #374151;
+  border-radius: 10px;
+  outline-color: #00fd83;
+}
+form input[type="checkbox"] {
+  width: 15px;
+  height: 15px;
+  margin: 5px 0;
+}
+form .checkbox-label {
+  line-height: 20px;
+}
+form .button-container {
+  display: flex;
+}
+form .button-container button {
+  flex: 1;
+  padding: 10px;
+  gap: 5px;
+  font-size: 16px;
+  margin: 40px 5px 20px 5px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  transition: 0.3s;
+}
+form .button-container button:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transform: translateY(-3px);
+}
+form .button-container .submit-button {
+  background-color: #93ffcb;
+  color: black;
+}
+/* Aside End */
+/* Popup delete */
+.popup-delete-container {
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+}
+.popup-delete-container.active {
+  opacity: 1;
+  visibility: visible;
+  transition: 0.3s;
+}
+
+.popup-delete {
+  min-width: 30%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px 30px;
+  background-color: #ffffff;
+  box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  z-index: 10;
+}
+.popup-delete h4 {
+  font-size: 20px;
+  margin: 20px 0;
+}
+.popup-delete .buttons {
+  display: flex;
+  justify-content: center;
+}
+.popup-delete button {
+  margin: 10px;
+  padding: 10px;
+  min-width: 100px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  border: none;
+  transition: 0.3s;
+}
+.popup-delete button:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transform: translateY(-3px);
+}
+.popup-delete button:nth-child(1) {
+  background-color: #93ffcb;
+  color: black;
+}
+div.on {
+  filter: blur(20px);
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Clear fix */
+.cf:before,
+.cf:after {
+  content: " "; /* 1 */
+  display: table; /* 2 */
+}
+
+.cf:after {
+  clear: both;
+}
+
+.cf {
+  *zoom: 1;
+}
