@@ -26,7 +26,7 @@
           <div id="particles-js"></div>
           <div class="jumbotron-content">
             <div class="head-content">
-              <h2>Bookself <span>Apps</span></h2>
+              <h2>Bookshelf <span>Apps</span></h2>
             </div>
           </div>
         </article>
@@ -82,6 +82,35 @@
         </div>
       </main>
     </div>
+    <section>
+      <div class="popup-update">
+        <div class="update-bg">
+          <section class="input-section">
+            <h2 class="heading"><span class="fa-solid fa-pen"></span> EDIT BOOK</h2>
+            <form action="#" class="form-update" id="form-update">
+              <label for="update-title-field">Title</label><br />
+              <input type="text" id="update-title-field" placeholder="Ex: Laskar Pelangi" required autofocus /><br />
+
+              <label for="update-author-field">Author</label><br />
+              <input type="text" id="update-author-field" placeholder="Ex: Andre Hirata" required autofocus /><br />
+
+              <label for="update-year-field">Published Book</label><br />
+              <input type="number" id="update-year-field" min="1800" max="2030" placeholder="Ex: 1800" required autofocus /><br />
+
+              <label>
+                <input type="checkbox" name="finished-read" id="update-finished-read-checkbox" />
+              </label>
+              <label for="update-finished-read-checkbox" id="checkbox-label" class="checkbox-label">Finished Reading</label>
+
+              <div class="button-update-container">
+                <button class="update-button" type="submit">Save</button>
+                <button class="cancel-update" id="cancel-button" type="button">Cancel</button>
+              </div>
+            </form>
+          </section>
+        </div>
+      </div>
+    </section>
 
     <script src="assets/js/particles.min.js"></script>
     <script src="assets/js/app.js"></script>

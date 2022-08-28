@@ -120,6 +120,26 @@ function addBook() {
   saveData();
 }
 
+function updateBook(bookObject) {
+  const { id, title, author, realese, isCompleted } = bookObject;
+  const book = findBook(id);
+
+  if (book === null) return;
+
+  book.title = title;
+  book.author = author;
+  book.realese = realese;
+  book.isCompleted = isCompleted;
+  Swal.fire({
+    icon: "success",
+    title: `Successfully Update Book ${bookObject.title}`,
+    showConfirmButton: false,
+    timer: 1500,
+  });
+  document.dispatchEvent(new Event(RENDER_EVENT));
+  saveData();
+}
+
 function addTitleToCompleted(bookId) {
   const bookTarget = findBook(bookId);
 
@@ -194,6 +214,7 @@ function makeBook(bookObject) {
 
   const textContainer = document.createElement("div");
   textContainer.classList.add("info");
+  textContainer.setAttribute("id", `${bookObject.id}`);
 
   if (bookObject.isCompleted) {
     textContainer.append(bookComplete, textTitle, textAuthor, textRealese);
@@ -205,9 +226,52 @@ function makeBook(bookObject) {
   delImg.classList.add("fa-solid", "fa-trash");
   const delButton = document.createElement("button");
   delButton.classList.add("delete");
+  const editImg = document.createElement("i");
+  editImg.classList.add("edit-icon", "fa-solid", "fa-pen");
+  const editButton = document.createElement("button");
+  editButton.classList.add("edit-button");
+  editButton.append(editImg);
 
   delButton.append(delImg);
-  const delConfirm = document.querySelector(".ok-del");
+
+  editButton.addEventListener("click", function () {
+    const updateBg = document.querySelector(".popup-update");
+    const closeBg = document.querySelector(".cancel-update");
+    const updateForm = document.getElementById("form-update");
+
+    const titleField = document.getElementById("update-title-field");
+    const authorField = document.getElementById("update-author-field");
+    const yearField = document.getElementById("update-year-field");
+    const rbChecked = document.getElementById("update-finished-read-checkbox");
+
+    titleField.value = bookObject.title;
+    authorField.value = bookObject.author;
+    yearField.value = bookObject.realese;
+    rbChecked.checked = bookObject.isCompleted;
+    updateBg.classList.add("active");
+    blurAction.classList.add("on");
+
+    // solved update
+    // Done https://pastebin.com/bWR72eLe
+    // https://www.dicoding.com/academies/315/discussions/175640?#comment-689955
+    updateForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+      updateBook({
+        id: bookObject.id,
+        title: titleField.value,
+        author: authorField.value,
+        realese: yearField.value,
+        isCompleted: rbChecked.checked,
+      });
+      updateBg.classList.remove("active");
+      blurAction.classList.remove("on");
+    });
+    closeBg.addEventListener("click", function () {
+      clearInput();
+      updateBg.classList.remove("active");
+      blurAction.classList.remove("on");
+    });
+  });
 
   delButton.addEventListener("click", function () {
     blurAction.classList.add("on");
@@ -256,7 +320,7 @@ function makeBook(bookObject) {
     const readingAction = document.createElement("button");
     readingAction.classList.add("reading");
     readingAction.innerText = "Move to Reading";
-    textContainer.append(delButton, readingAction);
+    textContainer.append(editButton, delButton, readingAction);
 
     readingAction.addEventListener("click", function () {
       Swal.fire({
@@ -272,7 +336,7 @@ function makeBook(bookObject) {
     completeAction.classList.add("complete");
     completeAction.innerText = "Move to Complete";
 
-    textContainer.append(delButton, completeAction);
+    textContainer.append(editButton, delButton, completeAction);
 
     completeAction.addEventListener("click", function () {
       Swal.fire({
