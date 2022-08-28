@@ -3,6 +3,7 @@
   padding: 0;
   text-decoration: none;
   box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
 }
 html::-webkit-scrollbar {
   display: none;
@@ -11,6 +12,7 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 button {
+  font-family: "Montserrat", sans-serif;
   cursor: pointer;
 }
 
@@ -75,6 +77,7 @@ article.add-book div.main-content {
   margin: 20px 50px;
 }
 article.add-book div.main-content button {
+  font-family: "Montserrat", sans-serif;
   height: 2em;
   font-size: 1.1em;
   border-radius: 15px;
@@ -159,11 +162,13 @@ div.container .info {
   margin-top: 20px;
   width: max-content;
   padding: 10px;
+  font-family: "Montserrat", sans-serif;
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 div.container .info h4 {
   font-size: 22px;
+  text-align: center;
 }
 div.container .info p {
   margin-top: 8px;
@@ -351,6 +356,7 @@ section form .button-update-container button {
   padding: 10px;
   gap: 5px;
   font-size: 16px;
+  font-family: "Montserrat", sans-serif;
   border: none;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
   transition: 0.3s;
