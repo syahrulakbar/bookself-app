@@ -29,13 +29,12 @@ button {
   height: 100%;
 }
 .jumbotron div.jumbotron-content {
-  display: flex;
+  width: 100%;
   flex-wrap: wrap;
-  position: absolute;
-  left: 45%;
+  text-align: center;
   top: 50%;
 }
-.jumbotron div.head-content {
+.jumbotron div.jumbotron-content div.head-content {
   width: 100%;
   z-index: 2;
 }
@@ -305,9 +304,10 @@ div.on {
   *zoom: 1;
 }
 @media screen and (max-width: 1068px) {
-  body {
+  main {
     margin-right: 20px;
     padding: 0 5%;
+    justify-content: center;
   }
 
   main aside {
@@ -316,6 +316,7 @@ div.on {
     margin: 20px 0 0 20px;
   }
   article.add-book div.main-content {
+    margin: 20px 20px;
     width: 90%;
   }
 
@@ -332,12 +333,17 @@ div.on {
     padding: 20px;
   }
   div.container .info {
-    width: fit-content;
+    width: max-content;
   }
   .jumbotron div.head-content h2 {
     font-size: 1.5em;
   }
-  .jumbotron div.jumbotron-content {
-    left: 40%;
+
+  div.container div.container-reading,
+  div.container div.container-complete {
+    margin: 20px 20px 20px 5%;
+  }
+  div.search-bar {
+    padding: 5px;
   }
 }
