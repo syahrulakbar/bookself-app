@@ -13,7 +13,7 @@ body {
 button {
   cursor: pointer;
 }
-/* Jumbtron */
+
 .jumbotron {
   min-height: 20vh;
   width: 100%;
@@ -47,8 +47,6 @@ button {
   color: #00fd83;
 }
 
-/* Jumbotron End */
-/* Main Content */
 main {
   margin-top: 20px;
 }
@@ -103,7 +101,6 @@ article.add-book div.main-content .complete-button {
   align-items: center;
 }
 
-/* Search bar */
 div.search-bar {
   width: 100%;
   padding: 0 50px 0 50px;
@@ -129,9 +126,7 @@ div.search-bar {
   outline: none;
   background-color: transparent;
 }
-/* Search bar end */
 
-/* Container Book */
 div.container {
   height: 53vh;
   overflow: scroll;
@@ -205,10 +200,6 @@ main div.book-image-complete {
   margin-left: 30%;
 }
 
-/* End Container */
-/* Main Content End */
-
-/* Aside */
 main aside {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
   margin-right: 30px;
@@ -266,40 +257,20 @@ form .button-container .submit-button {
   background-color: #93ffcb;
   color: black;
 }
-/* Aside End */
-/* Popup delete */
-.popup-delete-container {
-  opacity: 0;
-  visibility: hidden;
-  transition: 0.3s;
+body div.swal2-actions button.btn-success {
+  color: #fff;
+  background-color: #28a745;
+  box-shadow: 2px 2px 5px 5px #93d3a2;
 }
-.popup-delete-container.active {
-  opacity: 1;
-  visibility: visible;
-  transition: 0.3s;
+body div.swal2-actions button.btn-danger {
+  background-color: #dc3545;
+  color: #fff;
+  box-shadow: 2px 2px 5px 5px #dd8b93;
 }
 
-.popup-delete {
-  min-width: 30%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  padding: 20px 30px;
-  background-color: #ffffff;
-  box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.15);
-  border-radius: 10px;
-  z-index: 10;
-}
-.popup-delete h4 {
-  font-size: 20px;
-  margin: 20px 0;
-}
-.popup-delete .buttons {
-  display: flex;
-  justify-content: center;
-}
-.popup-delete button {
+body div.swal2-actions button {
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
   margin: 10px;
   padding: 10px;
   min-width: 100px;
@@ -309,25 +280,21 @@ form .button-container .submit-button {
   border: none;
   transition: 0.3s;
 }
-.popup-delete button:hover {
+body div.swal2-actions button:hover {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   transform: translateY(-3px);
 }
-.popup-delete button:nth-child(1) {
-  background-color: #93ffcb;
-  color: black;
-}
+
 div.on {
   filter: blur(20px);
   pointer-events: none;
   user-select: none;
 }
 
-/* Clear fix */
 .cf:before,
 .cf:after {
-  content: " "; /* 1 */
-  display: table; /* 2 */
+  content: " ";
+  display: table;
 }
 
 .cf:after {
@@ -336,4 +303,41 @@ div.on {
 
 .cf {
   *zoom: 1;
+}
+@media screen and (max-width: 1068px) {
+  body {
+    margin-right: 20px;
+    padding: 0 5%;
+  }
+
+  main aside {
+    float: none;
+    width: 100%;
+    margin: 20px 0 0 20px;
+  }
+  article.add-book div.main-content {
+    width: 90%;
+  }
+
+  main article.add-book {
+    float: none;
+    box-sizing: border-box;
+    width: 100%;
+  }
+
+  div.container ul {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  article.add-book h2.heading {
+    padding: 20px;
+  }
+  div.container .info {
+    width: fit-content;
+  }
+  .jumbotron div.head-content h2 {
+    font-size: 1.5em;
+  }
+  .jumbotron div.jumbotron-content {
+    left: 40%;
+  }
 }

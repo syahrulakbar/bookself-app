@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon" />
     <title>Bookself Apps | Dicoding</title>
-    <!-- Font Awesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
@@ -14,12 +13,10 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-
-    <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
-    <!-- My CSS -->
+
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
@@ -35,30 +32,6 @@
         </article>
       </header>
       <main class="cf">
-        <div class="action-button">
-          <article class="add-book">
-            <h2 class="heading"><span class="fa-solid fa-book"></span> MY BOOK</h2>
-            <div class="main-content">
-              <button class="reading-button active" id="reading-button">Reading</button>
-              <button class="complete-button" id="complete-button">Complete</button>
-            </div>
-            <div class="search-bar">
-              <label class="search-input-container">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                <input type="search" name="search" id="search-input" placeholder="Search by title" />
-              </label>
-            </div>
-            <div class="container">
-              <div class="container-reading">
-                <ul class="book-list-reading" id="book-list-reading"></ul>
-              </div>
-              <div class="container-complete" hidden>
-                <ul class="book-list-complete" id="book-list-complete"></ul>
-              </div>
-            </div>
-          </article>
-        </div>
-
         <aside>
           <h2 class="heading"><span class="fa-solid fa-square-plus"></span> ADD BOOK</h2>
           <div>
@@ -84,24 +57,35 @@
             </form>
           </div>
         </aside>
+        <div class="action-button">
+          <article class="add-book">
+            <h2 class="heading"><span class="fa-solid fa-book"></span> MY BOOK</h2>
+            <div class="main-content">
+              <button class="reading-button active" id="reading-button">Reading</button>
+              <button class="complete-button" id="complete-button">Complete</button>
+            </div>
+            <div class="search-bar">
+              <label class="search-input-container">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="search" name="search" id="search-input" placeholder="Search by title" />
+              </label>
+            </div>
+            <div class="container">
+              <div class="container-reading">
+                <ul class="book-list-reading" id="book-list-reading"></ul>
+              </div>
+              <div class="container-complete" hidden>
+                <ul class="book-list-complete" id="book-list-complete"></ul>
+              </div>
+            </div>
+          </article>
+        </div>
       </main>
     </div>
 
-    <div class="popup-delete-container">
-      <div class="bg-close del-close"></div>
-      <div class="popup-delete">
-        <h4>Are you sure to delete this book from the list?</h4>
-        <div class="buttons">
-          <button class="ok-del">Delete</button>
-          <button class="cancel-del">Cancel</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Particle JS -->
     <script src="assets/js/particles.min.js"></script>
     <script src="assets/js/app.js"></script>
-    <!-- Main JS -->
+    <script src="assets/js/sweetalert2.all.min.js"></script>
     <script src="assets/js/script.js"></script>
   </body>
 </html>
